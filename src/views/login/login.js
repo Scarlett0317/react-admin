@@ -33,10 +33,10 @@ class Login extends React.Component {
        })
     }
     render() {
-        //判断用户是否登录,
+        //判断用户是否登录,自动跳转到登录页面
         const user = memoryUtils.user
-        if( !user || !user.id){
-            return <Redirect to='/' />
+        if( user && user.id){
+            return <Redirect to='/'></Redirect>
         }
         const form = this.props.form;
         const { getFieldDecorator } = form;
