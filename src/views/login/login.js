@@ -1,6 +1,6 @@
 import React from 'react';
 import './login.less';
-import logo from './img/logo.png';
+import logo from '../../assets/img/logo.png';
 import {reqLogin }from '../../api/index.js'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import { message } from 'antd'
@@ -16,14 +16,13 @@ class Login extends React.Component {
            if(!err){
                const {username,password} = values;
                const result = await reqLogin(username,password)
-               if(result.status == 0){
+               if(result.status === 0){
                    message.success("登录成功")
                    //跳转到管理界面(不需要回退用replace,需要回退push)
                    const user = result.data;
                    memoryUtils.user = user;
                    storageUtils.saveUser(user)
                    this.props.history.replace('/')
-                   console.log( user.username)
                }else(
                     message.error('登录失败')
                )

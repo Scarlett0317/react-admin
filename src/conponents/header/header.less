@@ -1,0 +1,56 @@
+.header{
+    height: 80px;
+    background-color: white;
+    .header_top{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 12px;
+        padding: 10px 10px ;
+        border-bottom: 1px solid lightseagreen;
+        .ant-btn {
+            font-size: 12px;
+            width: 50px;
+            height: 20px;
+        }
+    }
+    .header_bottom{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 15px ;
+        .header_btm_left{
+            width: 25%;
+            text-align: center;
+            position: relative;
+            &::after{
+                content:'';
+                position: absolute;
+                top: 95%;
+                right:50%;
+                transform: translate(50%);
+                border-top:20px solid white;
+                border-bottom:20px solid transparent;
+                border-left:20px solid transparent;
+                border-right:20px solid transparent;
+            }
+        }
+
+        .header_btm_right{
+            width: 75%;
+            text-align: right;
+            .btm_left{
+                font-size: 12px;
+                
+            }
+            img{
+                width: 20px;
+                height: 20px;
+                margin: 0 15px;
+            }
+
+        }
+       
+    }
+   
+}
